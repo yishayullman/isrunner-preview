@@ -1,0 +1,17 @@
+{
+  "name": "isrunner",
+  "version": "1.0.0",
+  "description": "Isrunner — קהילת רצים בעברית עם שיאים אישיים, דירוגים שקופים, חברים וקבוצות",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "dev": "node --watch src/server.mjs",
+    "test": "node --test tests/api.test.mjs",
+    "test:browser": "python3 tests/browser_test.py",
+    "seed:demo": "node scripts/seed-local-demo.mjs"
+  }
+}
