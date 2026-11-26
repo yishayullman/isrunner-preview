@@ -3,169 +3,207 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#f6f3ee" />
-<meta name="description" content="Isrunner — קהילת רצים בעברית: מדידת GPS חיה, שיאים אישיים, Garmin ו-Strava." />
-<meta property="og:title" content="Isrunner — קהילת רצים בעברית" />
-<meta property="og:description" content="מדידת ריצה חיה עם GPS, שיאים אישיים וחיבורי Garmin ו-Strava." />
+<meta name="theme-color" content="#f4f1ec" />
+<meta name="description" content="Isrunner — קהילת הרצים של ישראל: שעון GPS חי, מחשבון קצב, שיאים אישיים, Garmin ו-Strava." />
+<meta property="og:title" content="Isrunner — קהילת הרצים של ישראל" />
+<meta property="og:description" content="שעון GPS חי מהטלפון, מחשבון קצב ומירוץ, שיאים אישיים וחיבורי Garmin ו-Strava." />
 <meta property="og:type" content="website" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='44' fill='%2315181e'/%3E%3Cg fill='none' stroke-linecap='round' stroke-width='20'%3E%3Cpath d='M44 134L84 62' stroke='%23fff'/%3E%3Cpath d='M86 134L126 62' stroke='%23e2552f'/%3E%3Cpath d='M128 134L148 98' stroke='%23fff' opacity='.45'/%3E%3C/g%3E%3C/svg%3E" />
-<title>Isrunner — קהילת רצים בעברית</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='44' fill='%230d1016'/%3E%3Cg fill='none' stroke-linecap='round' stroke-width='20'%3E%3Cpath d='M44 134L84 62' stroke='%23fff'/%3E%3Cpath d='M86 134L126 62' stroke='%23ff4d1c'/%3E%3Cpath d='M128 134L148 98' stroke='%23fff' opacity='.45'/%3E%3C/g%3E%3C/svg%3E" />
+<title>Isrunner — קהילת הרצים של ישראל</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Rubik:wght@500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --canvas:#f6f3ee; --s:#fff; --s2:#faf8f5; --s3:#f2eee8;
-    --ink:#15181e; --ink2:#2a2f38; --soft:#545a65; --mute:#7d828c;
-    --line:rgba(21,24,30,.08); --line2:rgba(21,24,30,.14);
-    --coral:#e2552f; --coral-d:#c4421f; --coral-s:#fdeee8; --coral-l:#f6c7b6;
-    --teal:#1d5c63; --teal-s:#e5f0f0; --teal-l:#b9d6d7;
-    --amb-bg:#fdf6e7; --amb-b:#efd49a; --amb-t:#7a520c;
-    --red-bg:#fdeeec; --red-b:#f3c0b8; --red-t:#a3301c;
+    --canvas:#f4f1ec; --s:#fff; --s2:#f8f6f2; --s3:#efebe4;
+    --obs:#0d1016; --obs2:#161b25; --ink:#11141b; --ink2:#242934; --soft:#4e5563; --mute:#767d8a;
+    --line:rgba(17,20,27,.075); --line2:rgba(17,20,27,.14);
+    --coral:#ff4d1c; --coral-d:#df3a0e; --cgrad:linear-gradient(135deg,#ff5d2e,#e63c10);
+    --coral-s:#fff0eb; --coral-l:#f8c6b6;
+    --teal:#0b7a62; --teal-b:#22c997; --teal-s:#e6f6f1; --teal-l:#b2e2d4;
+    --amb-bg:#fdf7e9; --amb-b:#eed297; --amb-t:#744d0a;
+    --red-bg:#fdeeec; --red-b:#f3c0b8; --red-t:#a52a16;
     --disp:'Rubik','Heebo',-apple-system,BlinkMacSystemFont,sans-serif;
     --body:'Heebo','Rubik',-apple-system,BlinkMacSystemFont,sans-serif;
-    --ease:cubic-bezier(.2,.7,.2,1);
-    --sh:0 1px 2px rgba(21,24,30,.04),0 8px 24px -12px rgba(21,24,30,.12);
+    --ease:cubic-bezier(.2,.8,.2,1);
+    --sh:0 1px 2px rgba(13,16,22,.04),0 10px 28px -14px rgba(13,16,22,.13);
+    --sh2:0 4px 12px rgba(13,16,22,.08),0 24px 48px -18px rgba(13,16,22,.46);
   }
   *{box-sizing:border-box}
   html,body{margin:0}
   body{font-family:var(--body);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;
-    background:radial-gradient(700px 300px at 100% -10%,rgba(226,85,47,.08),transparent 60%),radial-gradient(600px 280px at -10% 0,rgba(29,92,99,.07),transparent 60%),var(--canvas)}
+    background:radial-gradient(840px 340px at 95% -8%,rgba(255,77,28,.09),transparent 62%),radial-gradient(640px 300px at -8% 2%,rgba(11,122,98,.07),transparent 60%),var(--canvas)}
   button,input,textarea{font-family:inherit;font-size:1rem;color:inherit}
   .hidden{display:none!important}
   .tab{font-variant-numeric:tabular-nums}
-  .app{max-width:520px;margin:0 auto;min-height:100vh;position:relative;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
-  header{position:sticky;top:0;z-index:20;background:rgba(246,243,238,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .app{max-width:520px;margin:0 auto;min-height:100vh;position:relative;padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+  header{position:sticky;top:0;z-index:20;background:rgba(244,241,236,.84);-webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--line)}
   .hdr{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;min-height:58px}
-  .brand{display:inline-flex;align-items:center;gap:9px;background:none;border:0;padding:0;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:1.18rem;letter-spacing:-.02em;color:var(--ink)}
-  .mark{width:34px;height:34px;border-radius:11px;background:var(--ink);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -6px rgba(21,24,30,.5)}
-  .back{background:var(--s);border:1px solid var(--line2);border-radius:999px;padding:6px 12px;font-size:.84rem;font-weight:600;cursor:pointer}
-  .pill-status{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:600;color:var(--soft);background:var(--s);border:1px solid var(--line2);padding:5px 11px;border-radius:999px;white-space:nowrap;cursor:pointer}
-  .pill-status i{width:7px;height:7px;border-radius:50%;background:#38d39f;display:inline-block}
+  .brand{display:inline-flex;align-items:center;gap:9px;background:none;border:0;padding:0;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:1.22rem;letter-spacing:-.03em;color:var(--ink)}
+  .mark{width:35px;height:35px;border-radius:12px;background:linear-gradient(145deg,#1b202b,#0d1016);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -6px rgba(13,16,22,.55),inset 0 1px 0 rgba(255,255,255,.15)}
+  .back{background:var(--s);border:1px solid var(--line2);border-radius:999px;padding:6px 12px;font-size:.82rem;font-weight:600;cursor:pointer}
+  .run-pill{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:#fff;background:var(--cgrad);border:0;padding:6px 13px;border-radius:999px;white-space:nowrap;cursor:pointer;box-shadow:0 8px 18px -8px rgba(255,77,28,.8),inset 0 1px 0 rgba(255,255,255,.25)}
+  .run-pill:active{transform:scale(.96)}
   main{padding:16px 14px 8px;animation:in .3s var(--ease)}
   @keyframes in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-  .eyebrow{font-size:.78rem;font-weight:600;color:var(--mute);margin:2px 2px 2px}
-  h1.pt{margin:0 2px 16px;font-family:var(--disp);font-size:1.7rem;font-weight:700;letter-spacing:-.03em;line-height:1.15}
-  .card{background:var(--s);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh);padding:18px 16px;margin-bottom:14px}
+  .eyebrow{font-size:.78rem;font-weight:700;color:var(--coral-d);margin:0 2px 2px}
+  h1.pt{margin:0 2px 16px;font-family:var(--disp);font-size:1.78rem;font-weight:700;letter-spacing:-.035em;line-height:1.12}
+  .card{background:var(--s);border:1px solid var(--line);border-radius:24px;box-shadow:var(--sh);padding:19px 17px;margin-bottom:14px}
   .ch{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap}
-  .ct{margin:0;font-family:var(--disp);font-size:1.04rem;font-weight:600;letter-spacing:-.01em}
-  .cs{margin:3px 0 0;font-size:.84rem;color:var(--mute)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:8px 16px;border-radius:999px;border:1px solid transparent;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .18s var(--ease);text-align:center;line-height:1.3;max-width:100%}
+  .ct{margin:0;font-family:var(--disp);font-size:1.06rem;font-weight:700;letter-spacing:-.015em}
+  .cs{margin:3px 0 0;font-size:.83rem;color:var(--mute)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:8px 16px;border-radius:999px;border:1px solid transparent;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .18s var(--ease);text-align:center;line-height:1.3;max-width:100%}
   .btn:active{transform:scale(.97)}
-  .bp{background:var(--coral);color:#fff;box-shadow:0 8px 18px -10px rgba(226,85,47,.8)}
-  .bp:hover{background:var(--coral-d)}
-  .bi{background:var(--ink);color:#fff}
+  .bp{background:var(--cgrad);color:#fff;box-shadow:0 10px 22px -10px rgba(255,77,28,.85),inset 0 1px 0 rgba(255,255,255,.25)}
+  .bi{background:var(--obs);color:#fff}
   .bo{background:var(--s);color:var(--ink);border-color:var(--line2)}
-  .bo:hover{background:var(--s3)}
   .bd{background:var(--red-bg);color:var(--red-t);border-color:var(--red-b)}
-  .bsm{min-height:34px;padding:6px 13px;font-size:.82rem}
+  .bsm{min-height:35px;padding:6px 13px;font-size:.81rem}
   .bblk{width:100%}
   .brow{display:flex;flex-wrap:wrap;gap:8px}
-  .notice{position:relative;padding-right:60px}
-  .notice .ic{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:10px;background:var(--coral-s);display:flex;align-items:center;justify-content:center}
-  .notice p{margin:0 0 12px;font-size:.88rem;color:var(--soft)}
-  .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;border:0;box-shadow:0 2px 4px rgba(21,24,30,.05),0 18px 40px -18px rgba(21,24,30,.4)}
-  .hero::before{content:'';position:absolute;right:-90px;bottom:-140px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(226,85,47,.4),transparent 65%);pointer-events:none}
+  /* Flagship Obsidian Hero */
+  .hero{position:relative;overflow:hidden;color:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:var(--sh2);
+    background:radial-gradient(400px 240px at 0% 100%,rgba(255,77,28,.26),transparent 68%),radial-gradient(320px 200px at 100% 0%,rgba(34,201,151,.14),transparent 64%),linear-gradient(155deg,#161b25 0%,#0d1016 60%,#121620 100%)}
+  .hero::before{content:'';position:absolute;top:-70px;left:-85px;width:270px;height:145px;border:1.5px solid rgba(255,255,255,.055);border-radius:999px;box-shadow:0 0 0 18px rgba(255,255,255,.02),0 0 0 36px rgba(255,255,255,.014);pointer-events:none}
   .hero>*{position:relative;z-index:1}
   .hero .cs{color:rgba(255,255,255,.6)}
-  .hero .bo{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff}
+  .hero .bo{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
   .hero-main{display:flex;align-items:center;gap:16px}
-  .ring{flex-shrink:0;width:104px;height:104px;position:relative}
+  .ring{flex-shrink:0;width:106px;height:106px;position:relative}
   .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
   .ring .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .ring .c b{font-family:var(--disp);font-size:1.55rem;font-weight:600;line-height:1;letter-spacing:-.02em}
+  .ring .c b{font-family:var(--disp);font-size:1.6rem;font-weight:700;line-height:1;letter-spacing:-.025em}
   .ring .c span{font-size:.69rem;color:rgba(255,255,255,.6);margin-top:3px}
   .hstats{display:grid;gap:10px;flex:1;min-width:0}
-  .hs{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:9px 12px}
-  .hs .l{font-size:.72rem;color:rgba(255,255,255,.6)}
-  .hs .v{font-family:var(--disp);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+  .hs{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-radius:15px;padding:9px 12px}
+  .hs .l{font-size:.71rem;color:rgba(255,255,255,.6)}
+  .hs .v{font-family:var(--disp);font-size:1.18rem;font-weight:700;letter-spacing:-.015em;line-height:1.25}
   .chart{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
-  .chart-t{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.62);margin-bottom:10px}
+  .chart-t{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:10px}
   .bars{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;align-items:end}
   .bar{display:flex;flex-direction:column;align-items:center;gap:5px}
   .bar .tr{width:100%;max-width:34px;height:56px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:flex-end;overflow:hidden}
   .bar .tr i{display:block;width:100%;border-radius:10px;background:rgba(255,255,255,.28)}
-  .bar.cur .tr i{background:var(--coral)}
-  .bar small{font-size:.68rem;color:rgba(255,255,255,.55)}
+  .bar.cur .tr i{background:var(--cgrad)}
+  .bar small{font-size:.67rem;color:rgba(255,255,255,.55)}
   .bar.cur small{color:#fff;font-weight:700}
-  /* GPS Cockpit */
+  .hero-cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09)}
+  /* Quick tools strip */
+  .qgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}
+  .qtile{display:flex;align-items:center;gap:10px;padding:13px 13px;border-radius:20px;background:var(--s);border:1px solid var(--line);box-shadow:var(--sh);cursor:pointer;text-align:right;transition:transform .16s var(--ease)}
+  .qtile:active{transform:scale(.98)}
+  .qic{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .qtile b{display:block;font-family:var(--disp);font-size:.89rem;font-weight:700}
+  .qtile span{display:block;font-size:.73rem;color:var(--mute)}
+  /* Trust strip */
+  .trust{display:flex;align-items:flex-start;gap:11px;padding:13px 15px;border-radius:20px;background:var(--s);border:1px solid var(--line);box-shadow:var(--sh);margin-bottom:14px}
+  .trust-ic{width:32px;height:32px;border-radius:10px;background:var(--teal-s);color:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+  .trust b{display:block;font-family:var(--disp);font-size:.9rem}
+  .trust p{margin:2px 0 0;font-size:.8rem;color:var(--soft)}
+  /* GPS Cockpit & Pacer */
   .gps-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
   .gp{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;font-size:.75rem;font-weight:700;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14)}
   .gp i{width:8px;height:8px;border-radius:50%;display:inline-block}
-  .gp.ok i{background:#38d39f;box-shadow:0 0 0 3px rgba(56,211,159,.25)}
+  .gp.ok i{background:#22c997;box-shadow:0 0 0 3px rgba(34,201,151,.28)}
   .gp.warn i{background:#f5b942}
   .gp.bad i{background:#f25f5c}
   .bigd{text-align:center;padding:16px 0 10px}
-  .bigd b{display:block;font-family:var(--disp);font-size:4rem;font-weight:700;line-height:.95;letter-spacing:-.04em}
-  .bigd span{display:inline-block;margin-top:6px;font-size:.88rem;color:rgba(255,255,255,.62)}
+  .bigd b{display:block;font-family:var(--disp);font-size:4.2rem;font-weight:700;line-height:.92;letter-spacing:-.045em}
+  .bigd span{display:inline-block;margin-top:6px;font-size:.86rem;color:rgba(255,255,255,.6)}
   .tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .tgrid .hs{text-align:center;padding:10px 6px}
+  .pacer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:12px;padding:9px 11px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);font-size:.78rem}
+  .ppills{display:flex;flex-wrap:wrap;gap:4px}
+  .pc{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:rgba(255,255,255,.78);border-radius:999px;padding:3px 9px;font-size:.72rem;font-weight:700;cursor:pointer}
+  .pc.on{background:var(--coral);border-color:var(--coral);color:#fff}
   .pbar{width:100%;height:7px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:6px}
-  .pbar i{display:block;height:100%;border-radius:999px;background:linear-gradient(270deg,#f08a5d,var(--coral));transition:width .3s}
+  .pbar i{display:block;height:100%;border-radius:999px;background:var(--cgrad);transition:width .3s}
   .rbox{border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);overflow:hidden;margin-top:12px}
   .rbox.lt{background:var(--s2);border-color:var(--line)}
-  .rempty{text-align:center;padding:20px 10px;font-size:.79rem;color:rgba(255,255,255,.45);border:1px dashed rgba(255,255,255,.15);border-radius:16px;margin-top:12px}
+  .rempty{text-align:center;padding:18px 10px;font-size:.78rem;color:rgba(255,255,255,.45);border:1px dashed rgba(255,255,255,.15);border-radius:16px;margin-top:12px}
   .srow{display:grid;grid-template-columns:48px minmax(0,1fr) auto auto;align-items:center;gap:8px;padding:8px 10px;border-radius:12px;background:var(--s2);border:1px solid var(--line);font-size:.82rem;margin-bottom:6px}
   .sbar{height:8px;border-radius:999px;background:var(--s3);overflow:hidden}
-  .sbar i{display:block;height:100%;border-radius:999px;background:linear-gradient(270deg,#f08a5d,var(--coral))}
+  .sbar i{display:block;height:100%;border-radius:999px;background:var(--cgrad)}
   .errbox{background:var(--red-bg);border:1px solid var(--red-b);color:var(--red-t);border-radius:12px;padding:9px 12px;font-size:.84rem;margin-top:10px}
+  /* Medal PR Trophy Wall */
+  .prg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .pr{background:linear-gradient(180deg,#fff,#f8f6f2);border:1px solid var(--line);border-radius:18px;padding:12px 14px;min-width:0}
+  .pr.u{border-color:rgba(255,77,28,.25);background:linear-gradient(180deg,#fff,#fff6f2)}
+  .pr.w{grid-column:span 2}
+  .pr-top{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:3px}
+  .pr-chip{direction:ltr;unicode-bidi:isolate;font-family:var(--disp);font-size:.66rem;font-weight:700;padding:2px 7px;border-radius:7px;background:var(--s3);color:var(--soft)}
+  .pr.u .pr-chip{background:var(--obs);color:#fff}
+  .pr .l{font-size:.75rem;font-weight:700;color:var(--soft)}
+  .pr .v{font-family:var(--disp);font-size:1.35rem;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+  .pr .v.dim{color:#c5c0b8}
+  .pr .s{font-size:.71rem;color:var(--mute)}
+  /* Pace Calc */
+  .slider{width:100%;accent-color:var(--coral);cursor:pointer;margin-top:12px}
+  .rgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:14px}
+  .rtile{background:var(--s2);border:1px solid var(--line);border-radius:15px;padding:11px 12px}
+  .rtile .l{font-size:.74rem;color:var(--mute);font-weight:600}
+  .rtile .v{font-family:var(--disp);font-size:1.25rem;font-weight:700;margin-top:2px}
+  .zrow{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border-radius:13px;background:var(--s2);border:1px solid var(--line);font-size:.84rem;margin-bottom:7px}
   /* Generic */
   .empty{text-align:center;padding:20px 14px;color:var(--mute);font-size:.88rem;background:var(--s2);border:1px dashed var(--line2);border-radius:16px}
   .empty .eic{width:40px;height:40px;margin:0 auto 8px;border-radius:12px;background:var(--s);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
-  .prg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .pr{background:var(--s2);border:1px solid var(--line);border-radius:16px;padding:12px 14px;min-width:0}
-  .pr.w{grid-column:span 2}
-  .pr .l{font-size:.75rem;font-weight:600;color:var(--mute)}
-  .pr .v{font-family:var(--disp);font-size:1.25rem;font-weight:600;color:var(--ink)}
-  .pr .v.dim{color:#b9b4ac}
-  .pr .s{font-size:.72rem;color:var(--mute)}
   .pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-  .tp{padding:7px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--s);color:var(--soft);font-weight:600;font-size:.84rem;cursor:pointer;transition:all .18s var(--ease)}
-  .tp.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .tp{padding:7px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--s);color:var(--soft);font-weight:700;font-size:.83rem;cursor:pointer}
+  .tp.on{background:var(--obs);color:#fff;border-color:var(--obs)}
   .rule{background:var(--s2);box-shadow:none}
-  .rule p{margin:0 0 8px;font-size:.87rem;color:var(--soft)}
-  .range{display:inline-flex;align-items:center;gap:8px;background:var(--s);border:1px solid var(--line);border-radius:12px;padding:7px 12px;font-size:.84rem;font-weight:600}
+  .rule p{margin:0 0 8px;font-size:.86rem;color:var(--soft)}
+  .range{display:inline-flex;align-items:center;gap:8px;background:var(--s);border:1px solid var(--line);border-radius:12px;padding:7px 12px;font-size:.83rem;font-weight:600}
   .range b{font-family:var(--disp);color:var(--coral-d)}
-  .hint{font-size:.78rem;color:var(--mute);margin:8px 0 0}
+  .hint{font-size:.77rem;color:var(--mute);margin:8px 0 0}
   .row{display:flex;gap:8px}
   .in{flex:1;min-width:0;min-height:44px;padding:10px 14px;border:1px solid var(--line2);border-radius:14px;background:var(--s2);font-size:1rem}
-  .in:focus{outline:none;background:#fff;border-color:var(--ink);box-shadow:0 0 0 4px rgba(21,24,30,.08)}
-  .lbl{display:block;font-size:.84rem;font-weight:600;color:var(--ink2);margin-bottom:6px}
+  .in:focus{outline:none;background:#fff;border-color:var(--obs);box-shadow:0 0 0 4px rgba(13,16,22,.08)}
+  .lbl{display:block;font-size:.84rem;font-weight:700;color:var(--ink2);margin-bottom:6px}
   .fg{margin-bottom:12px}
   .opt{display:flex;align-items:flex-start;gap:11px;padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:var(--s2);cursor:pointer;margin-bottom:8px}
-  .opt.on{border-color:var(--ink);background:#fff;box-shadow:0 0 0 3px rgba(21,24,30,.06)}
+  .opt.on{border-color:var(--obs);background:#fff;box-shadow:0 0 0 3px rgba(13,16,22,.06)}
   .opt input{margin-top:4px;accent-color:var(--coral)}
-  .opt b{display:block;font-size:.92rem;font-weight:600}
+  .opt b{display:block;font-size:.92rem;font-weight:700}
   .opt span{font-size:.8rem;color:var(--mute)}
   .chk{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;cursor:pointer;margin-top:6px}
   .chk input{width:18px;height:18px;margin-top:3px;accent-color:var(--coral);flex-shrink:0}
   .me-top{display:flex;align-items:center;gap:14px}
-  .av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#f4b39a,var(--coral));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--line);flex-shrink:0}
-  .list button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:13px 2px;background:none;border:0;border-bottom:1px solid var(--line);font-size:.94rem;font-weight:600;color:var(--ink);cursor:pointer;text-align:right}
+  .av{width:52px;height:52px;border-radius:50%;background:var(--cgrad);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--line);flex-shrink:0}
+  .list button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:13px 2px;background:none;border:0;border-bottom:1px solid var(--line);font-size:.94rem;font-weight:700;color:var(--ink);cursor:pointer;text-align:right}
   .list button:last-child{border-bottom:0}
   .src{display:flex;align-items:center;gap:12px}
   .src-ic{width:44px;height:44px;border-radius:14px;background:var(--teal-s);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;font-size:.73rem;font-weight:600;border:1px solid var(--line2);background:var(--s3);color:var(--soft);white-space:nowrap}
+  .badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;font-size:.72rem;font-weight:700;border:1px solid var(--line2);background:var(--s3);color:var(--soft);white-space:nowrap}
   .badge.amb{background:var(--amb-bg);border-color:var(--amb-b);color:var(--amb-t)}
   .badge.teal{background:var(--teal-s);border-color:var(--teal-l);color:var(--teal)}
-  .run-card{border:1px solid var(--line);border-radius:16px;background:var(--s2);padding:12px 14px;margin-bottom:8px}
+  .run-card{border:1px solid var(--line);border-radius:18px;background:var(--s2);padding:13px 14px;margin-bottom:9px}
   .steps{margin:0;padding:0;list-style:none;counter-reset:s}
-  .steps li{counter-increment:s;display:flex;gap:10px;font-size:.86rem;color:var(--soft);padding:5px 0}
+  .steps li{counter-increment:s;display:flex;gap:10px;font-size:.85rem;color:var(--soft);padding:5px 0}
   .steps li span{min-width:0;flex:1;overflow-wrap:anywhere}
-  .steps li::before{content:counter(s);flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .steps li::before{content:counter(s);flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--obs);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
   code{direction:ltr;unicode-bidi:isolate;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;background:var(--s3);padding:1px 5px;border-radius:5px;overflow-wrap:anywhere}
   .res{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
   .res:last-child{border-bottom:0}
   .res .k{flex-shrink:0;width:38px;height:38px;border-radius:12px;background:var(--coral-s);color:var(--coral-d);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:.85rem}
   .res b{display:block;font-size:.92rem}
   .res span{font-size:.82rem;color:var(--mute)}
-  nav.bn{position:fixed;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:10px;right:10px;max-width:500px;margin:0 auto;z-index:30;background:rgba(21,24,30,.95);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:24px;box-shadow:0 18px 40px -14px rgba(21,24,30,.55);display:grid;grid-template-columns:repeat(5,1fr);padding:6px;gap:2px}
-  .nb{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border:0;background:transparent;color:rgba(255,255,255,.58);font-size:.7rem;font-weight:600;cursor:pointer;border-radius:18px;transition:all .2s var(--ease)}
+  nav.bn{position:fixed;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:10px;right:10px;max-width:500px;margin:0 auto;z-index:30;background:rgba(13,16,22,.94);-webkit-backdrop-filter:saturate(160%) blur(18px);backdrop-filter:saturate(160%) blur(18px);border-radius:26px;box-shadow:0 20px 44px -12px rgba(13,16,22,.62),inset 0 1px 0 rgba(255,255,255,.08);display:grid;grid-template-columns:repeat(5,1fr);padding:6px;gap:2px}
+  .nb{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border:0;background:transparent;color:rgba(255,255,255,.56);font-size:.7rem;font-weight:600;cursor:pointer;border-radius:20px;transition:all .2s var(--ease)}
   .nb svg{width:21px;height:21px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .nb.on{color:#fff;background:rgba(255,255,255,.1)}
+  .nb.on{color:#fff;background:rgba(255,255,255,.11)}
   .nb.on svg{color:var(--coral)}
-  .toast{position:fixed;bottom:calc(84px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:40;background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:.86rem;font-weight:600;box-shadow:0 14px 30px -12px rgba(21,24,30,.6);max-width:calc(100% - 28px);text-align:center}
-  @media (max-width:350px){main{padding:14px 10px}.hdr{padding:8px 10px}.pill-status{padding:4px 8px;font-size:.7rem}.back{padding:5px 9px;font-size:.76rem}.brand{font-size:1.05rem}h1.pt{font-size:1.45rem}.ring{width:88px;height:88px}.notice{padding-right:16px}.notice .ic{display:none}.nb{font-size:.64rem}nav.bn{left:6px;right:6px;padding:5px}.bigd b{font-size:3.2rem}}
+  .nb.on::after{content:'';position:absolute;bottom:4px;width:14px;height:2.5px;border-radius:999px;background:var(--coral)}
+  .modal{position:fixed;inset:0;z-index:60;background:rgba(13,16,22,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:14px}
+  .mcard{width:100%;max-width:440px;max-height:90vh;overflow-y:auto;background:#fff;border-radius:26px;padding:18px;box-shadow:var(--sh2)}
+  .toast{position:fixed;bottom:calc(86px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:70;background:var(--obs);color:#fff;padding:10px 16px;border-radius:999px;font-size:.86rem;font-weight:700;box-shadow:0 14px 32px -12px rgba(13,16,22,.65);max-width:calc(100% - 28px);text-align:center}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--s3);border-radius:999px;padding:4px;margin-bottom:14px}
+  .seg button{border:0;border-radius:999px;min-height:38px;background:transparent;color:var(--soft);font-weight:700;font-size:.9rem;cursor:pointer;transition:all .18s var(--ease)}
+  .seg button.on{background:#fff;color:var(--ink);box-shadow:0 3px 10px -4px rgba(13,16,22,.2)}
+  .apills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .apill{font-size:.74rem;font-weight:700;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.9)}
+  .upill{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line2);padding:5px 11px;border-radius:999px;font-size:.76rem;font-weight:700;color:var(--ink);max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .upill i{width:7px;height:7px;border-radius:50%;background:var(--teal-b);flex-shrink:0}
+  @media (max-width:350px){main{padding:14px 10px}.hdr{padding:8px 10px}.run-pill{padding:5px 9px;font-size:.72rem}.upill{display:none}.back{padding:5px 9px;font-size:.76rem}.brand{font-size:1.05rem}h1.pt{font-size:1.45rem}.ring{width:88px;height:88px}.qgrid{grid-template-columns:1fr}.nb{font-size:.64rem}nav.bn{left:6px;right:6px;padding:5px}.bigd b{font-size:3.2rem}}
 </style>
 </head>
 <body>
@@ -175,31 +213,77 @@
       <div style="display:flex;align-items:center;gap:8px">
         <button id="back-btn" class="back hidden" type="button">&#8594;&nbsp;חזרה</button>
         <button id="brand-btn" class="brand" type="button" aria-label="Isrunner בית">
-          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-linecap="round"><path d="M5 16.5 L11 7.5" stroke="#fff" stroke-width="2.6"/><path d="M10.5 16.5 L16.5 7.5" stroke="#e2552f" stroke-width="2.6"/><path d="M16 16.5 L19 12" stroke="#fff" stroke-width="2.6" opacity=".45"/></svg></span>
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-linecap="round"><path d="M5 16.5 L11 7.5" stroke="#fff" stroke-width="2.6"/><path d="M10.5 16.5 L16.5 7.5" stroke="#ff4d1c" stroke-width="2.6"/><path d="M16 16.5 L19 12" stroke="#fff" stroke-width="2.6" opacity=".45"/></svg></span>
           <span dir="ltr">Isrunner</span>
         </button>
       </div>
-      <button class="pill-status" type="button" onclick="go('track')"><i></i>מדוד עם GPS</button>
+      <div style="display:flex;align-items:center;gap:6px">
+        <button id="hdr-run-btn" class="run-pill hidden" type="button" onclick="go('track')">▶ רוץ עכשיו</button>
+        <span id="hdr-user" class="upill hidden"></span>
+      </div>
     </div>
   </header>
   <main id="main"></main>
-  <nav class="bn" id="bottom-nav" aria-label="ניווט"></nav>
+  <nav class="bn hidden" id="bottom-nav" aria-label="ניווט"></nav>
+  <div id="modal-root" class="modal hidden" role="dialog" aria-modal="true"></div>
   <div id="toast" class="toast hidden" role="status"></div>
 </div>
 <script>
 const CATS=[
-  {k:'5k',l:'5 ק"מ',a:'5.00',b:'5.24',min:5,max:5.25},
-  {k:'10k',l:'10 ק"מ',a:'10.00',b:'10.24',min:10,max:10.25},
-  {k:'half',l:'חצי מרתון',a:'21.10',b:'21.34',min:21.0975,max:21.3475},
-  {k:'mar',l:'מרתון',a:'42.20',b:'42.44',min:42.195,max:42.445},
-  {k:'long',l:'הארוכה ביותר'}
+  {k:'5k',c:'5K',l:'5 ק"מ',a:'5.00',b:'5.24',min:5,max:5.25},
+  {k:'10k',c:'10K',l:'10 ק"מ',a:'10.00',b:'10.24',min:10,max:10.25},
+  {k:'half',c:'21.1K',l:'חצי מרתון',a:'21.10',b:'21.34',min:21.0975,max:21.3475},
+  {k:'mar',c:'42.2K',l:'מרתון',a:'42.20',b:'42.44',min:42.195,max:42.445},
+  {k:'long',c:'MAX',l:'הארוכה ביותר'}
 ];
-const LS_KEY='isrunner_gps_runs_v1';
-function loadRuns(){try{const x=JSON.parse(localStorage.getItem(LS_KEY)||'[]');return Array.isArray(x)?x:[]}catch{return[]}}
-function saveRuns(arr){try{localStorage.setItem(LS_KEY,JSON.stringify(arr))}catch{}}
+const EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const DISP_DOMAINS=new Set(['10minutemail.com','10minutemail.net','burnermail.io','discard.email','dispostable.com','emailondeck.com','fakeinbox.com','getnada.com','grr.la','guerrillamail.biz','guerrillamail.com','guerrillamail.de','guerrillamail.net','guerrillamail.org','maildrop.cc','mailinator.com','mailnesia.com','mintemail.com','mohmal.com','mytemp.email','nada.email','sharklasers.com','temp-mail.io','temp-mail.org','tempail.com','tempmail.com','tempmail.net','tempr.email','throwawaymail.com','trashmail.com','trashmail.de','yopmail.com','yopmail.fr','yopmail.net']);
+function canonEmail(raw){
+  const c=String(raw||'').trim().toLowerCase(),at=c.lastIndexOf('@');
+  if(at<=0||at===c.length-1)return c;
+  let l=c.slice(0,at),d=c.slice(at+1);
+  if(d==='googlemail.com')d='gmail.com';
+  const p=l.indexOf('+');if(p>0)l=l.slice(0,p);
+  if(d==='gmail.com')l=l.replace(/\./g,'');
+  return `${l}@${d}`;
+}
+function isDispEmail(raw){
+  const c=String(raw||'').trim().toLowerCase(),at=c.lastIndexOf('@');
+  if(at<=0)return false;
+  const d=c.slice(at+1);
+  if(DISP_DOMAINS.has(d))return true;
+  for(const b of DISP_DOMAINS)if(d.endsWith('.'+b))return true;
+  return false;
+}
+async function hashPw(pw,salt){
+  if(window.crypto&&crypto.subtle){
+    const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(salt+':'+pw));
+    return Array.from(new Uint8Array(buf),b=>b.toString(16).padStart(2,'0')).join('');
+  }
+  let h=5381;const s=salt+':'+pw;for(let i=0;i<s.length;i++)h=((h<<5)+h)^s.charCodeAt(i);
+  return String(h>>>0);
+}
+const LS_ACC='isrunner_accounts_v1',LS_SES='isrunner_session_v1',LS_RUNS_LEGACY='isrunner_gps_runs_v1';
+function loadAccounts(){try{const a=JSON.parse(localStorage.getItem(LS_ACC)||'[]');return Array.isArray(a)?a:[]}catch{return[]}}
+function saveAccounts(a){try{localStorage.setItem(LS_ACC,JSON.stringify(a))}catch{}}
+function loadSessionUser(){
+  try{
+    const id=localStorage.getItem(LS_SES);if(!id)return null;
+    return loadAccounts().find(a=>a.id===id)||null;
+  }catch{return null}
+}
+function runsKey(uid){return uid?`isrunner_gps_runs_${uid}`:LS_RUNS_LEGACY}
+function loadRuns(uid){
+  try{
+    const x=JSON.parse(localStorage.getItem(runsKey(uid))||'[]');
+    return Array.isArray(x)?x:[];
+  }catch{return[]}
+}
+function saveRuns(arr){try{localStorage.setItem(runsKey(S.user?.id),JSON.stringify(arr))}catch{}}
 
-const S={route:'home',prev:null,cat:'5k',goal:null,privacy:'everyone',globalLb:true,groups:[],runs:loadRuns()};
-const G={phase:'idle',watchId:null,timerId:null,wake:null,wakeOn:false,sound:true,status:('geolocation' in navigator)?'ready':'unsupported',err:'',acc:null,seg:0,pts:[],route:[],distM:0,accMs:0,startMs:null,splits:[],nextKm:1000,prevSplitSec:0,curPace:null};
+const initUser=loadSessionUser();
+const S={user:initUser,authMode:'register',authErr:'',route:initUser?'home':'auth',prev:null,cat:'5k',goal:null,privacy:'everyone',globalLb:true,groups:[],runs:initUser?loadRuns(initUser.id):[],calcPace:315};
+const G={phase:'idle',watchId:null,timerId:null,wake:null,wakeOn:false,sound:true,targetPace:null,status:('geolocation' in navigator)?'ready':'unsupported',err:'',acc:null,seg:0,pts:[],route:[],distM:0,accMs:0,startMs:null,splits:[],nextKm:1000,prevSplitSec:0,curPace:null};
 
 const I={
   home:'<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/>',
@@ -209,14 +293,20 @@ const I={
   me:'<circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>'
 };
 const TABS=[['home','בית'],['leaderboard','שיאים'],['friends','חברים'],['groups','קבוצות'],['me','אני']];
-const svg=(p,s=20,c='currentColor')=>`<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
-const chev=svg('<path d="m15 18-6-6 6-6"/>',18);
+const svg=(p,s=20,c='currentColor')=>`<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="${c}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const chev=svg('<path d="m15 18-6-6 6-6"/>',18,'#767d8a');
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function greeting(){const h=new Date().getHours();return h>=5&&h<12?'בוקר טוב':h>=12&&h<17?'אחר צהריים טובים':h>=17&&h<22?'ערב טוב':'לילה טוב'}
 function fmtDur(sec){if(!sec||sec<=0)return '0:00';sec=Math.round(sec);const h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=sec%60,p=v=>String(v).padStart(2,'0');return h>0?`${h}:${p(m)}:${p(s)}`:`${m}:${p(s)}`}
 function fmtPace(sp){if(!sp||sp<=0)return '—';sp=Math.round(sp);return `${Math.floor(sp/60)}:${String(sp%60).padStart(2,'0')}`}
 function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.remove('hidden');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.add('hidden'),2600)}
-function go(r){if(S.route==='track'&&r!=='track'&&G.phase==='idle')stopGps();S.prev=TABS.some(t=>t[0]===r)?null:S.route;S.route=r;render();window.scrollTo(0,0)}
-const empty=(icon,txt)=>`<div class="empty"><div class="eic">${svg(icon,18,'#7d828c')}</div>${txt}</div>`;
+function go(r){
+  if(!S.user&&r!=='auth'){S.route='auth';S.prev=null;render();return}
+  if(S.route==='track'&&r!=='track'&&G.phase==='idle')stopGps();
+  S.prev=TABS.some(t=>t[0]===r)||r==='auth'?null:S.route;
+  S.route=r;render();window.scrollTo(0,0);
+}
+const empty=(icon,txt)=>`<div class="empty"><div class="eic">${svg(icon,18,'#767d8a')}</div>${txt}</div>`;
 
 function hav(a1,o1,a2,o2){const r=Math.PI/180,dA=(a2-a1)*r,dO=(o2-o1)*r,x=Math.sin(dA/2)**2+Math.cos(a1*r)*Math.cos(a2*r)*Math.sin(dO/2)**2;return 12742000*Math.atan2(Math.sqrt(x),Math.sqrt(1-x))}
 function beep(){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=new C();[0,.15].forEach((t,i)=>{const o=c.createOscillator(),g=c.createGain();o.frequency.value=i?1175:880;g.gain.value=.12;o.connect(g);g.connect(c.destination);o.start(c.currentTime+t);o.stop(c.currentTime+t+.1)})}catch{}}
@@ -231,13 +321,43 @@ function routeSvg(coords,dark=true){
   const W=320,H=130,pad=14,sc=Math.min((W-pad*2)/sx,(H-pad*2)/sy),ox=(W-sx*sc)/2,oy=(H-sy*sc)/2;
   const pts=coords.map(([a,o])=>`${(ox+(o-minO)*cosA*sc).toFixed(1)},${(H-(oy+(a-minA)*sc)).toFixed(1)}`);
   const [x0,y0]=pts[0].split(','),[x1,y1]=pts[pts.length-1].split(',');
-  return `<div class="rbox ${dark?'':'lt'}"><svg viewBox="0 0 ${W} ${H}" width="100%" height="130"><polyline points="${pts.join(' ')}" fill="none" stroke="#e2552f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${x0}" cy="${y0}" r="4" fill="${dark?'#fff':'#1d5c63'}"/><circle cx="${x1}" cy="${y1}" r="5.5" fill="#e2552f" stroke="${dark?'#15181e':'#fff'}" stroke-width="2"/></svg></div>`;
+  return `<div class="rbox ${dark?'':'lt'}"><svg viewBox="0 0 ${W} ${H}" width="100%" height="130"><polyline points="${pts.join(' ')}" fill="none" stroke="#ff4d1c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${x0}" cy="${y0}" r="4" fill="${dark?'#fff':'#0b7a62'}"/><circle cx="${x1}" cy="${y1}" r="5.5" fill="#ff4d1c" stroke="${dark?'#0d1016':'#fff'}" stroke-width="2"/></svg></div>`;
 }
 function splitsHtml(sp){
   if(!sp||!sp.length)return '<div class="empty">כל קילומטר שלם שיושלם יופיע כאן עם הקצב שלו.</div>';
   const ps=sp.map(x=>x.split_sec),mx=Math.max(...ps),mn=Math.min(...ps),span=Math.max(1,mx-mn);
   return sp.map(x=>{const pct=ps.length===1?80:Math.round(35+((mx-x.split_sec)/span)*65);return `<div class="srow"><b class="tab">ק"מ ${x.km}</b><div class="sbar"><i style="width:${pct}%"></i></div><b class="tab">${fmtPace(x.split_sec)}</b><span class="tab" style="color:var(--mute)">${fmtDur(x.elapsed_sec)}</span></div>`}).join('');
 }
+
+function shareRunCard(idx){
+  const r=S.runs[idx];if(!r)return;
+  const cv=document.createElement('canvas');cv.width=720;cv.height=900;const c=cv.getContext('2d');
+  const bg=c.createLinearGradient(0,0,720,900);bg.addColorStop(0,'#171c27');bg.addColorStop(.6,'#0d1016');bg.addColorStop(1,'#121621');c.fillStyle=bg;c.fillRect(0,0,720,900);
+  const g1=c.createRadialGradient(120,780,20,120,780,420);g1.addColorStop(0,'rgba(255,77,28,.34)');g1.addColorStop(1,'rgba(255,77,28,0)');c.fillStyle=g1;c.fillRect(0,0,720,900);
+  c.fillStyle='#fff';c.font='700 34px Rubik,sans-serif';c.textAlign='left';c.fillText('Isrunner',48,82);
+  c.strokeStyle='#ff4d1c';c.lineWidth=5;c.lineCap='round';c.beginPath();c.moveTo(48,100);c.lineTo(148,100);c.stroke();
+  c.fillStyle='rgba(255,255,255,.65)';c.font='600 22px Heebo,sans-serif';c.textAlign='right';c.fillText(new Date(r.ranAt).toLocaleDateString('he-IL'),672,82);
+  const poly=r.route||[];
+  if(poly.length>=2){
+    const lats=poly.map(p=>p[0]),lngs=poly.map(p=>p[1]),minA=Math.min(...lats),maxA=Math.max(...lats),minO=Math.min(...lngs),maxO=Math.max(...lngs);
+    const cosA=Math.max(.2,Math.cos(((minA+maxA)/2)*Math.PI/180)),sx=Math.max(.00015,(maxO-minO)*cosA),sy=Math.max(.00015,maxA-minA),sc=Math.min(600/sx,250/sy),ox=(720-sx*sc)/2,oy=175+(250-sy*sc)/2;
+    c.strokeStyle='#ff5722';c.lineWidth=7;c.lineJoin='round';c.beginPath();poly.forEach(([a,o],i)=>{const x=ox+(o-minO)*cosA*sc,y=oy+(maxA-a)*sc;i?c.lineTo(x,y):c.moveTo(x,y)});c.stroke();
+  }
+  const yh=poly.length>=2?555:420;
+  c.fillStyle='#fff';c.textAlign='center';c.font='700 132px Rubik,sans-serif';c.fillText(r.km.toFixed(2),360,yh);
+  c.fillStyle='rgba(255,255,255,.62)';c.font='600 30px Heebo,sans-serif';c.fillText('ק"מ',360,yh+46);
+  const yb=yh+95;c.fillStyle='rgba(255,255,255,.06)';c.strokeStyle='rgba(255,255,255,.12)';c.lineWidth=2;
+  c.beginPath();c.roundRect(48,yb,296,130,24);c.fill();c.stroke();c.beginPath();c.roundRect(376,yb,296,130,24);c.fill();c.stroke();
+  c.fillStyle='rgba(255,255,255,.6)';c.font='600 22px Heebo,sans-serif';c.fillText('קצב ממוצע',196,yb+44);c.fillText('זמן נטו',524,yb+44);
+  c.fillStyle='#fff';c.font='700 44px Rubik,sans-serif';c.fillText(fmtPace(r.sec/r.km),196,yb+100);c.fillText(fmtDur(r.sec),524,yb+100);
+  c.fillStyle='#22c997';c.font='600 21px Heebo,sans-serif';c.fillText('מדידת GPS ב-Isrunner',360,864);
+  const url=cv.toDataURL('image/png'),txt=`ריצה ב-Isrunner: ${r.km.toFixed(2)} ק"מ ב-${fmtDur(r.sec)} (קצב ${fmtPace(r.sec/r.km)} דק'/ק"מ)`;
+  const mr=document.getElementById('modal-root');
+  mr.innerHTML=`<div class="mcard"><div class="ch" style="margin-bottom:10px"><div><h3 class="ct">כרטיס שיתוף ריצה</h3><p class="cs">מוכן לוואטסאפ ולסטורי</p></div><button class="btn bo bsm" onclick="closeModal()">סגור</button></div><img src="${url}" style="width:100%;border-radius:18px;display:block;margin-bottom:12px"/><div class="brow"><button id="m-sh" class="btn bp" style="flex:1">שתף עכשיו</button><a href="${url}" download="isrunner-run.png" class="btn bi">הורד תמונה</a></div></div>`;
+  mr.classList.remove('hidden');mr.onclick=e=>{if(e.target===mr)closeModal()};
+  document.getElementById('m-sh').onclick=async()=>{try{if(navigator.share){const bl=await new Promise(res=>cv.toBlob(res,'image/png'));const f=bl?new File([bl],'isrunner-run.png',{type:'image/png'}):null;if(f&&navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({title:'Isrunner',text:txt,files:[f]});return}await navigator.share({title:'Isrunner',text:txt});return}if(navigator.clipboard){await navigator.clipboard.writeText(txt);toast('הסיכום הועתק!')}}catch{}};
+}
+function closeModal(){const mr=document.getElementById('modal-root');mr.classList.add('hidden');mr.innerHTML=''}
 
 function onPos(pos){
   const lat=pos.coords.latitude,lng=pos.coords.longitude,acc=Math.round(pos.coords.accuracy||0),ts=pos.timestamp||Date.now();
@@ -262,7 +382,6 @@ function onPos(pos){
   }
   G.pts.push({lat,lng,ts,acc,seg:G.seg});
   if(G.route.length<250)G.route.push([lat,lng]);
-  // Rolling pace over last 18s
   let wd=0,ft=ts;
   for(let i=G.pts.length-1;i>0;i--){const a=G.pts[i-1],b=G.pts[i];if(a.seg!==G.seg||b.seg!==G.seg)break;const d=(b.ts-a.ts)/1000;if(d<=0||d>30)break;wd+=hav(a.lat,a.lng,b.lat,b.lng);ft=a.ts;if(ts-ft>=18000&&wd>=35)break}
   const ws=(ts-ft)/1000;G.curPace=(wd>=20&&ws>=4)?Math.round(ws/(wd/1000)):null;
@@ -288,8 +407,8 @@ function saveGpsRun(){
   const km=Math.round((G.distM/1000)*1000)/1000,sec=netSec();
   if(G.pts.length<3||km<.05||sec<10)return toast('הריצה קצרה מדי (נדרשים לפחות 50 מ׳ ו-10 שניות של GPS)');
   const note=(document.getElementById('g-note')?.value||'').trim();
-  const run={id:'gps_'+Date.now(),km,sec,ranAt:new Date().toISOString(),note,splits:G.splits.slice(),route:G.route.slice(0,120),source:'מדידת GPS ב-Isrunner'};
-  S.runs.unshift(run);saveRuns(S.runs);resetTrack();toast('הריצה נשמרה במכשיר!');go('home');
+  S.runs.unshift({id:'gps_'+Date.now(),km,sec,ranAt:new Date().toISOString(),note,splits:G.splits.slice(),route:G.route.slice(0,120),source:'מדידת GPS ב-Isrunner'});
+  saveRuns(S.runs);resetTrack();toast('הריצה נשמרה במכשיר!');go('home');
 }
 function gpsBadge(){
   if(G.status==='unsupported')return '<span class="gp bad"><i></i>GPS לא נתמך</span>';
@@ -307,6 +426,8 @@ function updLive(){
   const lb=document.getElementById('lkb');if(lb)lb.style.width=`${Math.min(100,Math.round(kmM/10))}%`;
   const gs=document.getElementById('gp-slot');if(gs)gs.innerHTML=gpsBadge();
   const ge=document.getElementById('gp-err');if(ge){ge.textContent=G.err;ge.classList.toggle('hidden',!G.err)}
+  const pd=document.getElementById('pd');
+  if(pd&&G.targetPace&&km>=.05){const diff=Math.round(km*G.targetPace)-sec;pd.style.color=diff>=0?'#5eead4':'#fca5a5';pd.textContent=diff>=0?`מקדים ב-${diff} שנ׳`:`מאחר ב-${Math.abs(diff)} שנ׳`}
 }
 
 function weeksData(){
@@ -327,7 +448,84 @@ function bestFor(c){
   return best;
 }
 function prs(){
-  return `<div class="prg">${CATS.map(c=>{const b=bestFor(c);const val=!b?'—':c.k==='long'?`${b.km.toFixed(2)} ק"מ`:fmtDur(b.sec);return `<div class="pr ${c.k==='long'?'w':''}"><div class="l">${c.l}</div><div class="v tab ${b?'':'dim'}">${val}</div><div class="s">${b?`${b.km.toFixed(2)} ק"מ · ${fmtPace(b.sec/b.km)} דק'/ק"מ`:'אין תוצאה עדיין'}</div></div>`}).join('')}</div>`;
+  return `<div class="prg">${CATS.map(c=>{const b=bestFor(c);const val=!b?'—':c.k==='long'?`${b.km.toFixed(2)} ק"מ`:fmtDur(b.sec);return `<div class="pr ${c.k==='long'?'w':''} ${b?'u':''}"><div class="pr-top"><div class="l">${c.l}</div><span class="pr-chip">${c.c}</span></div><div class="v tab ${b?'':'dim'}">${val}</div><div class="s">${b?`${b.km.toFixed(2)} ק"מ · ${fmtPace(b.sec/b.km)} דק'/ק"מ`:(c.a?`טווח ${c.a}–${c.b} ק"מ`:'המרחק הגבוה ביותר')}</div></div>`}).join('')}</div>`;
+}
+
+function auth(){
+  const isReg=S.authMode==='register';
+  return `
+  <section class="card hero" style="padding:22px 18px">
+    <div style="font-size:.76rem;font-weight:700;color:#ff8a66;margin-bottom:4px">קהילת הרצים של ישראל</div>
+    <h1 class="pt" style="color:#fff;margin-bottom:8px">כל ריצה אמיתית נספרת.</h1>
+    <p style="margin:0;font-size:.88rem;color:rgba(255,255,255,.76)">מדידת GPS חיה מהטלפון, מחשבון קצב ומירוץ, שיאים אישיים ודירוג שקוף בלי כפילויות.</p>
+    <div class="apills">
+      <span class="apill">שעון GPS חי</span>
+      <span class="apill">Garmin ו-Strava</span>
+      <span class="apill">אימייל אחד לכל רץ</span>
+    </div>
+  </section>
+  <section class="card">
+    <div class="seg" role="tablist">
+      <button type="button" id="pv-tab-reg" class="${isReg?'on':''}" onclick="S.authMode='register';S.authErr='';render()">הרשמה</button>
+      <button type="button" id="pv-tab-login" class="${!isReg?'on':''}" onclick="S.authMode='login';S.authErr='';render()">התחברות</button>
+    </div>
+    ${S.authErr?`<div class="errbox" style="margin-top:0;margin-bottom:12px">${esc(S.authErr)}</div>`:''}
+    <form id="pv-auth-form" onsubmit="event.preventDefault();submitAuth()" novalidate>
+      ${isReg?`<div class="fg"><label class="lbl" for="a-name">שם תצוגה</label><input id="a-name" class="in" style="width:100%" required autocomplete="name" placeholder="השם שיוצג בדירוג ובכרטיס הריצה" /></div>`:''}
+      <div class="fg">
+        <label class="lbl" for="a-email">אימייל אישי (חובה)</label>
+        <input id="a-email" class="in" style="width:100%" type="email" dir="ltr" required autocomplete="email" placeholder="name@example.com" />
+        ${isReg?'<div class="hint">כתובת אימייל אחת לכל רץ (חוסם מיילים זמניים וכפילויות +tag). כל רץ מופיע פעם אחת בלבד בכל טבלה.</div>':''}
+      </div>
+      <div class="fg">
+        <label class="lbl" for="a-pw">סיסמה</label>
+        <input id="a-pw" class="in" style="width:100%" type="password" required autocomplete="${isReg?'new-password':'current-password'}" placeholder="לפחות 8 תווים" />
+      </div>
+      <button id="a-submit" class="btn bp bblk" type="submit">${isReg?'הרשמה וכניסה ל-Isrunner':'כניסה לחשבון'}</button>
+    </form>
+    <div class="trust" style="margin-top:14px;margin-bottom:0">
+      <span class="trust-ic">${svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',17,'#0b7a62')}</span>
+      <div><b>למה חובה אימייל אישי?</b><p>כדי שאדם אחד לא יוכל לפתוח כמה חשבונות ולתפוס את כל העשירייה הראשונה. בגרסת השרת (Cloudflare) נוסף גם אימות קוד בן 6 ספרות למייל.</p></div>
+    </div>
+  </section>`;
+}
+
+async function submitAuth(){
+  const emailRaw=(document.getElementById('a-email')?.value||'').trim().toLowerCase();
+  const pw=document.getElementById('a-pw')?.value||'';
+  const accounts=loadAccounts();
+  if(!emailRaw||!EMAIL_RE.test(emailRaw)||emailRaw.length>120){S.authErr='חובה להזין כתובת אימייל תקינה.';render();return}
+  if(pw.length<8){S.authErr='הסיסמה חייבת להכיל לפחות 8 תווים.';render();return}
+  const canon=canonEmail(emailRaw);
+
+  if(S.authMode==='register'){
+    const name=(document.getElementById('a-name')?.value||'').trim();
+    if(name.length<2||name.length>40){S.authErr='שם התצוגה חייב להכיל 2 עד 40 תווים.';render();return}
+    if(isDispEmail(emailRaw)){S.authErr='לא ניתן להירשם עם כתובת אימייל זמנית או חד-פעמית. השתמש באימייל אישי קבוע.';render();return}
+    if(accounts.some(a=>a.canon===canon||a.email===emailRaw)){S.authErr='כתובת האימייל הזו (או כינוי שלה) כבר משויכת לחשבון קיים. עבור ל"התחברות".';render();return}
+    const id='u_'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+    const pwHash=await hashPw(pw,id);
+    const acc={id,name,email:emailRaw,canon,pwHash,createdAt:new Date().toISOString()};
+    accounts.push(acc);saveAccounts(accounts);
+    try{localStorage.setItem(LS_SES,id)}catch{}
+    S.user=acc;S.authErr='';S.runs=loadRuns(id);S.route='home';S.prev=null;
+    toast(`ברוך הבא, ${name}!`);render();window.scrollTo(0,0);
+  }else{
+    const acc=accounts.find(a=>a.canon===canon||a.email===emailRaw);
+    if(!acc){S.authErr='אימייל או סיסמה שגויים (או שעדיין לא נרשמת במכשיר הזה).';render();return}
+    const pwHash=await hashPw(pw,acc.id);
+    if(pwHash!==acc.pwHash){S.authErr='אימייל או סיסמה שגויים.';render();return}
+    try{localStorage.setItem(LS_SES,acc.id)}catch{}
+    S.user=acc;S.authErr='';S.runs=loadRuns(acc.id);S.route='home';S.prev=null;
+    toast(`שלום ${acc.name}!`);render();window.scrollTo(0,0);
+  }
+}
+
+function logoutPreview(){
+  stopGps();
+  try{localStorage.removeItem(LS_SES)}catch{}
+  S.user=null;S.runs=[];S.authMode='login';S.authErr='';S.route='auth';S.prev=null;
+  toast('התנתקת מהחשבון');render();window.scrollTo(0,0);
 }
 
 function home(){
@@ -335,17 +533,8 @@ function home(){
   const C=2*Math.PI*44,pct=S.goal?Math.min(1,cur.km/S.goal):(cur.km>0?1:0);
   const totKm=S.runs.reduce((a,r)=>a+r.km,0),totSec=S.runs.reduce((a,r)=>a+r.sec,0);
   return `
-  <div class="eyebrow">ברוך הבא</div>
-  <h1 class="pt">הבית שלך</h1>
-  <section class="card notice">
-    <div class="ic">${svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',18,'#c4421f')}</div>
-    <h2 class="ct" style="margin-bottom:4px">מדידת ריצה וחיבורי שעון</h2>
-    <p>הוספת ריצות ידנית סגורה. אפשר למדוד ריצה כבר עכשיו ב-GPS מתוך האפליקציה, או לחבר Garmin ו-Strava בגרסת השרת.</p>
-    <div class="brow">
-      <button class="btn bp bsm" onclick="go('track')">▶ מדוד ריצה עכשיו (GPS)</button>
-      <button class="btn bi bsm" onclick="go('sources')">Garmin / Strava</button>
-    </div>
-  </section>
+  <div class="eyebrow">${greeting()}</div>
+  <h1 class="pt">${S.user?esc(S.user.name):'מוכן לריצה?'}</h1>
   <section class="card hero">
     <div class="ch">
       <div><h2 class="ct">השבוע שלי</h2><p class="cs">מיום ראשון ועד היום</p></div>
@@ -353,7 +542,7 @@ function home(){
     </div>
     <div class="hero-main">
       <div class="ring">
-        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="8"/><circle cx="50" cy="50" r="44" fill="none" stroke="#e2552f" stroke-width="8" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-pct)}"/></svg>
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="8"/><circle cx="50" cy="50" r="44" fill="none" stroke="#ff4d1c" stroke-width="8" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-pct)}"/></svg>
         <div class="c"><b class="tab">${cur.km.toFixed(1)}</b><span>${S.goal?`מתוך ${S.goal} ק"מ`:'ק"מ השבוע'}</span></div>
       </div>
       <div class="hstats">
@@ -365,18 +554,70 @@ function home(){
       <div class="chart-t"><span>רצף 6 שבועות (ק"מ)</span><span>${S.goal?`יעד: ${S.goal} ק"מ`:'בלי יעד מוגדר'}</span></div>
       <div class="bars">${wk.map(w=>`<div class="bar ${w.cur?'cur':''}"><div class="tr"><i style="height:${w.km>0?Math.max(12,Math.round((w.km/maxKm)*100)):7}%"></i></div><small>${w.lbl}</small></div>`).join('')}</div>
     </div>
+    <div class="hero-cta">
+      <button class="btn bp" style="flex:1" onclick="go('track')">▶ התחל ריצה עם GPS</button>
+      <button class="btn bo" onclick="go('sources')">Garmin / Strava</button>
+    </div>
+  </section>
+  <div class="qgrid">
+    <button class="qtile" onclick="go('calc')">
+      <span class="qic" style="background:var(--coral-s);color:var(--coral-d)">${svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',20,'#df3a0e')}</span>
+      <span><b>מחשבון קצב ומירוץ</b><span>5K, 10K, חצי ומרתון</span></span>
+    </button>
+    <button class="qtile" onclick="go('sources')">
+      <span class="qic" style="background:var(--teal-s);color:var(--teal)">${svg('<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',20,'#0b7a62')}</span>
+      <span><b>שעון Garmin ו-Strava</b><span>סנכרון אוטומטי ואמין</span></span>
+    </button>
+  </div>
+  <section class="trust">
+    <span class="trust-ic">${svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',17,'#0b7a62')}</span>
+    <div><b>דירוג אמין ללא הזנה ידנית</b><p>כל ריצה נקלטת רק מ-GPS חי או מחיבור מאומת ל-Garmin / Strava. בלי הקלדה ידנית.</p></div>
   </section>
   <section class="card">
-    <div class="ch"><div><h2 class="ct">הריצות שנמדדו במכשיר</h2><p class="cs">מדידות GPS אמיתיות שביצעת כאן</p></div><span class="badge">${S.runs.length}</span></div>
-    ${S.runs.length?S.runs.map(r=>`<div class="run-card"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap"><strong class="tab" style="font-size:1.05rem">${r.km.toFixed(2)} ק"מ · ${fmtDur(r.sec)}</strong><span class="badge teal">${esc(r.source)}</span></div><div class="cs tab">קצב ${fmtPace(r.sec/r.km)} דק'/ק"מ${r.splits?.length?` · ${r.splits.length} פיצולי ק"מ`:''}</div>${r.note?`<div style="font-size:.84rem;margin-top:4px">${esc(r.note)}</div>`:''}${r.route?.length>=2?routeSvg(r.route,false):''}</div>`).join(''):empty('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>','עוד לא מדדת ריצה. לחץ "מדוד ריצה עכשיו (GPS)" כדי לצאת לריצה אמיתית.')}
+    <div class="ch"><div><h2 class="ct">הריצות שנמדדו כאן</h2><p class="cs">מדידות GPS אמיתיות מהמכשיר שלך</p></div><span class="badge">${S.runs.length}</span></div>
+    ${S.runs.length?S.runs.map((r,idx)=>`<div class="run-card"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap"><strong class="tab" style="font-size:1.08rem">${r.km.toFixed(2)} ק"מ · ${fmtDur(r.sec)}</strong><span class="badge teal">${esc(r.source)}</span></div><div class="cs tab">קצב ${fmtPace(r.sec/r.km)} דק'/ק"מ${r.splits?.length?` · ${r.splits.length} פיצולי ק"מ`:''}</div>${r.note?`<div style="font-size:.84rem;margin-top:4px">${esc(r.note)}</div>`:''}${r.route?.length>=2?routeSvg(r.route,false):''}<div class="brow" style="margin-top:10px"><button class="btn bi bsm" onclick="shareRunCard(${idx})">שתף כרטיס ריצה</button></div></div>`).join(''):empty('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>','עוד לא מדדת ריצה. לחץ "התחל ריצה עם GPS" וצא לריצה אמיתית.')}
   </section>
   <section class="card">
-    <div class="ch"><div><h2 class="ct">השיאים האישיים שלי</h2><p class="cs">יתמלאו מריצות GPS, Garmin או Strava</p></div></div>
+    <div class="ch"><div><h2 class="ct">קיר השיאים האישיים</h2><p class="cs">ייפתחו אוטומטית מהריצות שלך</p></div></div>
     ${prs()}
+  </section>`;
+}
+
+function calcBody(p){
+  const races=[['5 ק"מ',5],['10 ק"מ',10],['חצי מרתון',21.0975],['מרתון',42.195]];
+  const zones=[['ריצה קלה / התאוששות',`${fmtPace(p+45)}–${fmtPace(p+75)}`],['קצב מרתון',fmtPace(p+15)],['טמפו / סף',fmtPace(Math.max(170,p-10))],['אינטרוולים (1,000 מ׳)',fmtPace(Math.max(160,p-25))]];
+  return {
+    racesHtml: races.map(([l,km])=>`<div class="rtile"><div class="l">${l}</div><div class="v tab">${fmtDur(Math.round(km*p))}</div></div>`).join(''),
+    zonesHtml: zones.map(([n,v])=>`<div class="zrow"><b>${n}</b><span class="tab" style="color:var(--coral-d);font-weight:700">${v} דק'/ק"מ</span></div>`).join('')
+  };
+}
+function updCalc(v){
+  S.calcPace=v;
+  const {racesHtml,zonesHtml}=calcBody(v);
+  const cpv=document.getElementById('cpv'),csp=document.getElementById('csp'),cr=document.getElementById('calc-races'),cz=document.getElementById('calc-zones');
+  if(cpv)cpv.innerHTML=`${fmtPace(v)} <small style="font-size:.9rem;font-weight:500;color:rgba(255,255,255,.6)">דק'/ק"מ</small>`;
+  if(csp)csp.innerHTML=`${(3600/v).toFixed(1)} <small style="font-size:.8rem;color:rgba(255,255,255,.6)">קמ"ש</small>`;
+  if(cr)cr.innerHTML=racesHtml;
+  if(cz)cz.innerHTML=zonesHtml;
+}
+function calc(){
+  const p=S.calcPace,spd=(3600/p).toFixed(1),{racesHtml,zonesHtml}=calcBody(p);
+  return `
+  <div class="eyebrow">כלי אימון</div>
+  <h1 class="pt">מחשבון קצב ומירוץ</h1>
+  <section class="card hero">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+      <div><div class="cs">קצב יעד</div><div id="cpv" class="tab" style="font-family:var(--disp);font-size:2.3rem;font-weight:700;line-height:1.1">${fmtPace(p)} <small style="font-size:.9rem;font-weight:500;color:rgba(255,255,255,.6)">דק'/ק"מ</small></div></div>
+      <div style="text-align:left"><div class="cs">מהירות</div><div id="csp" class="tab" style="font-family:var(--disp);font-size:1.45rem;font-weight:700">${spd} <small style="font-size:.8rem;color:rgba(255,255,255,.6)">קמ"ש</small></div></div>
+    </div>
+    <input id="pace-rng" class="slider" type="range" min="180" max="540" step="5" value="${p}" oninput="updCalc(Number(this.value))" aria-label="בחירת קצב בשניות לקילומטר"/>
+    <div style="display:flex;justify-content:space-between;font-size:.72rem;color:rgba(255,255,255,.55);margin-top:4px"><span>3:00 (מהיר)</span><span>6:00</span><span>9:00 (קל)</span></div>
   </section>
   <section class="card">
-    <div class="ch"><div><h2 class="ct">פעילות חברים</h2><p class="cs">14 הימים האחרונים</p></div><button class="btn bo bsm" onclick="go('friends')">חברים</button></div>
-    ${empty(I.friends,'עדיין אין חברים. תצוגה נקייה ללא משתמשים לדוגמה.')}
+    <h2 class="ct" style="margin-bottom:10px">זמני סיום משוערים</h2>
+    <div id="calc-races" class="rgrid">${racesHtml}</div>
+    <h2 class="ct" style="margin-bottom:10px">טווחי אימון מומלצים</h2>
+    <div id="calc-zones">${zonesHtml}</div>
   </section>`;
 }
 
@@ -408,7 +649,7 @@ function track(){
   <section class="card hero">
     <div class="gps-top">
       <div id="gp-slot">${gpsBadge()}</div>
-      <button class="btn bo bsm" style="min-height:30px;padding:3px 10px;font-size:.75rem" onclick="G.sound=!G.sound;render()">${G.sound?'צליל כל ק"מ: פעיל':'צליל כל ק"מ: כבוי'}</button>
+      <button class="btn bo bsm" style="min-height:30px;padding:3px 10px;font-size:.74rem" onclick="G.sound=!G.sound;render()">${G.sound?'צליל כל ק"מ: פעיל':'צליל כל ק"מ: כבוי'}</button>
     </div>
     <div id="gp-err" class="errbox ${G.err?'':'hidden'}">${esc(G.err)}</div>
     <div class="bigd"><b id="ld" class="tab">${km.toFixed(2)}</b><span>ק"מ</span></div>
@@ -417,13 +658,17 @@ function track(){
       <div class="hs"><div class="l">קצב ממוצע</div><div id="lap" class="v tab">${ap?fmtPace(ap):'—'}</div></div>
       <div class="hs"><div class="l">קצב נוכחי</div><div id="lcp" class="v tab">${G.curPace?fmtPace(G.curPace):'—'}</div></div>
     </div>
+    <div class="pacer">
+      <span style="color:rgba(255,255,255,.72)">${G.targetPace?`יעד <b class="tab" style="color:#fff">${fmtPace(G.targetPace)}</b> · <b id="pd" style="color:#5eead4">מוכן</b>`:'קצב יעד (Pacer):'}</span>
+      <div class="ppills">${[[null,'ללא'],[270,'4:30'],[300,'5:00'],[330,'5:30'],[360,'6:00'],[390,'6:30']].map(([v,l])=>`<button class="pc ${G.targetPace===v?'on':''}" onclick="G.targetPace=${v};render()">${l}</button>`).join('')}</div>
+    </div>
     <div style="margin-top:12px">
-      <div style="display:flex;justify-content:space-between;font-size:.74rem;color:rgba(255,255,255,.6)"><span id="lkt" class="tab">${kmM} / 1,000 מ׳ לק"מ הבא</span><span>${G.phase==='running'?'מקליט GPS':G.phase==='paused'?'מושהה':'מוכן ליציאה'}</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:.73rem;color:rgba(255,255,255,.6)"><span id="lkt" class="tab">${kmM} / 1,000 מ׳ לק"מ הבא</span><span>${G.phase==='running'?'מקליט GPS':G.phase==='paused'?'מושהה':'מוכן ליציאה'}</span></div>
       <div class="pbar"><i id="lkb" style="width:${Math.min(100,Math.round(kmM/10))}%"></i></div>
     </div>
     <div id="rt-slot">${routeSvg(G.route,true)}</div>
     <div class="brow" style="margin-top:14px">
-      ${G.phase==='idle'?'<button class="btn bp bblk" style="min-height:48px;font-size:1.02rem" onclick="startTrack()">▶ התחל ריצה</button>':G.phase==='running'?'<button class="btn bo" style="flex:1;min-height:46px" onclick="pauseTrack()">⏸ השהה</button><button class="btn bp" style="flex:1;min-height:46px" onclick="finishTrack()">■ סיים ריצה</button>':'<button class="btn bp" style="flex:1;min-height:46px" onclick="resumeTrack()">▶ המשך</button><button class="btn bo" style="flex:1;min-height:46px" onclick="finishTrack()">✓ סיים</button><button class="btn bd" style="min-height:46px" onclick="resetTrack()">בטל</button>'}
+      ${G.phase==='idle'?'<button class="btn bp bblk" style="min-height:50px;font-size:1.05rem" onclick="startTrack()">▶ התחל ריצה</button>':G.phase==='running'?'<button class="btn bo" style="flex:1;min-height:46px" onclick="pauseTrack()">⏸ השהה</button><button class="btn bp" style="flex:1;min-height:46px" onclick="finishTrack()">■ סיים ריצה</button>':'<button class="btn bp" style="flex:1;min-height:46px" onclick="resumeTrack()">▶ המשך</button><button class="btn bo" style="flex:1;min-height:46px" onclick="finishTrack()">✓ סיים</button><button class="btn bd" style="min-height:46px" onclick="resetTrack()">בטל</button>'}
     </div>
   </section>
   <section class="card"><h2 class="ct" style="margin-bottom:10px">פיצולי ק"מ (Splits)</h2><div id="sp-slot">${splitsHtml(G.splits)}</div></section>
@@ -436,15 +681,17 @@ function leaderboard(){
   <div class="eyebrow">דירוג שקוף</div>
   <h1 class="pt">שיאים ודירוג</h1>
   <div class="pills">${CATS.map(x=>`<button class="tp ${x.k===S.cat?'on':''}" onclick="S.cat='${x.k}';render()">${x.l}</button>`).join('')}</div>
+  <section class="card hero" style="text-align:center;padding:24px 18px">
+    <div style="display:inline-flex;width:48px;height:48px;border-radius:16px;background:rgba(255,77,28,.2);color:#ff8a66;align-items:center;justify-content:center;margin-bottom:10px">${svg(I.leaderboard,24,'#ff8a66')}</div>
+    <h2 class="ct" style="justify-content:center;font-size:1.18rem;margin-bottom:4px">מקום #1 ב־${c.l} עדיין פנוי</h2>
+    <p class="cs" style="margin-bottom:14px">הטבלה מתמלאת רק מריצות GPS, Garmin או Strava — בלי הזנה ידנית ובלי אנשים לדוגמה.</p>
+    <button class="btn bp bsm" onclick="go('track')">▶ רוץ עכשיו ותפוס פסגה</button>
+  </section>
   <section class="card rule">
     <h2 class="ct" style="margin-bottom:8px">איך הדירוג עובד</h2>
     <p>ריצה נספרת אם המרחק שנמדד הוא לפחות המרחק הנומינלי ופחות מ־0.25 ק"מ מעליו. הזמן נלקח כפי שנמדד, בלי נרמול. לכל רץ נספרת התוצאה הטובה ביותר.</p>
     ${c.a?`<span class="range">טווח ${c.l}: <b class="tab" dir="ltr">${c.a}–${c.b}</b> ק"מ</span>`:`<span class="range">הריצה עם <b>המרחק הגבוה ביותר</b> שנמדד</span>`}
     <p class="hint">קצב מתחת ל־2:45 או מעל 15:00 לק"מ מסומן "קצב חריג" לשקיפות בלבד, לא נחסם.</p>
-  </section>
-  <section class="card">
-    <div class="ch"><div><h2 class="ct">טבלת ${c.l}</h2><p class="cs">רק ריצות משותפות מ-GPS, Garmin או Strava</p></div><span class="badge">0 רצים</span></div>
-    ${empty(I.leaderboard,'עוד אין תוצאות משותפות בטבלה.')}
   </section>`;
 }
 
@@ -472,7 +719,7 @@ function groups(){
   </section>
   <section class="card">
     <div class="ch"><h2 class="ct">הקבוצות שלי</h2><span class="badge">${S.groups.length}</span></div>
-    ${S.groups.length?`<div>${S.groups.map(g=>`<div class="src" style="padding:10px 0;border-bottom:1px solid var(--line)"><div class="src-ic" style="background:var(--coral-s)">${svg(I.groups,20,'#c4421f')}</div><div style="flex:1;min-width:0"><b>${esc(g.n)}</b><div class="cs">חבר אחד · קוד <bdi dir="ltr">${g.c}</bdi></div></div><span class="badge teal">מנהל/ת</span></div>`).join('')}</div>`:empty(I.groups,'עוד לא הצטרפת לקבוצה')}
+    ${S.groups.length?`<div>${S.groups.map(g=>`<div class="src" style="padding:10px 0;border-bottom:1px solid var(--line)"><div class="src-ic" style="background:var(--coral-s)">${svg(I.groups,20,'#df3a0e')}</div><div style="flex:1;min-width:0"><b>${esc(g.n)}</b><div class="cs">חבר אחד · קוד <bdi dir="ltr">${g.c}</bdi></div></div><span class="badge teal">מנהל/ת</span></div>`).join('')}</div>`:empty(I.groups,'עוד לא הצטרפת לקבוצה')}
   </section>
   <section class="card">
     <h2 class="ct" style="margin-bottom:12px">יצירת קבוצה חדשה</h2>
@@ -487,21 +734,23 @@ function me(){
   const o=(v,t,d)=>`<label class="opt ${S.privacy===v?'on':''}"><input type="radio" name="pv" ${S.privacy===v?'checked':''} onchange="S.privacy='${v}';render();toast('הפרטיות עודכנה')"/><div><b>${t}</b><span>${d}</span></div></label>`;
   return `
   <section class="card">
-    <div class="me-top"><div class="av">${svg(I.me,24,'#fff')}</div><div style="min-width:0"><h1 class="ct" style="font-size:1.2rem">החשבון שלי</h1><p class="cs">כאן יופיעו השם והפרטים שלך</p></div></div>
+    <div class="me-top"><div class="av">${svg(I.me,24,'#fff')}</div><div style="min-width:0;flex:1"><h1 class="ct" style="font-size:1.22rem">${esc(S.user?.name||'החשבון שלי')}</h1><p class="cs" style="overflow-wrap:anywhere" dir="ltr">${esc(S.user?.email||'')}</p><div style="margin-top:6px"><span class="badge teal">אימייל אישי ייחודי</span></div></div></div>
   </section>
-  <section class="card"><h2 class="ct" style="margin-bottom:12px">השיאים האישיים שלי</h2>${prs()}</section>
+  <section class="card"><h2 class="ct" style="margin-bottom:12px">קיר השיאים שלי</h2>${prs()}</section>
   <section class="card">
     <h2 class="ct">פרטיות</h2><p class="cs" style="margin-bottom:12px">נאכף בשרת. תמיד אפשר להפוך ריצה בודדת לפרטית.</p>
     ${o('everyone','כולם','כל משתמש רשום יכול לראות ריצות משותפות')}
     ${o('friends','רק חברים','רק חברים מאושרים')}
     ${o('none','אף אחד','הפרופיל והריצות מוסתרים')}
-    <label class="chk"><input type="checkbox" ${S.globalLb?'checked':''} onchange="S.globalLb=this.checked;toast('נשמר')"/>להופיע בדירוג הכללי</label>
+    <label class="chk"><input type="checkbox" ${S.globalLb?'checked':''} onchange="S.globalLb=this.checked;toast('נשמר')"/>להופיע בדירוג הכללי (תוצאה אחת בלבד לכל רץ)</label>
   </section>
   <section class="card list" style="padding-top:6px;padding-bottom:6px">
     <button onclick="go('track')"><span>מדידת ריצה חיה (GPS)</span>${chev}</button>
+    <button onclick="go('calc')"><span>מחשבון קצב וזמני מירוץ</span>${chev}</button>
     <button onclick="go('sources')"><span>מקורות מדידה (Garmin / Strava)</span>${chev}</button>
     <button onclick="go('resources')"><span>משאבים לרצים</span>${chev}</button>
     <button onclick="toast('טיוטת מדיניות פרטיות, גיל 18+')"><span>מדיניות פרטיות</span>${chev}</button>
+    <button id="pv-logout-btn" onclick="logoutPreview()" style="color:var(--red-t)"><span>התנתקות מהחשבון</span>${chev}</button>
   </section>`;
 }
 
@@ -510,12 +759,12 @@ function sources(){
   <h1 class="pt">מקורות מדידה</h1>
   <section class="card hero">
     <div class="ch"><div><h2 class="ct">מדידת GPS ישירה ב-Isrunner</h2><p class="cs">פעיל עכשיו ישירות מהטלפון</p></div><span class="badge teal">פעיל</span></div>
-    <p style="margin:0 0 12px;font-size:.86rem;color:rgba(255,255,255,.78)">מודד מרחק, זמן נטו, קצב חי, פיצולי ק"מ ומפת מסלול ישירות מה-GPS של הטלפון.</p>
+    <p style="margin:0 0 12px;font-size:.86rem;color:rgba(255,255,255,.78)">מודד מרחק, זמן נטו, קצב חי, קצב יעד (Pacer), פיצולי ק"מ ומפת מסלול ישירות מ-GPS הטלפון.</p>
     <button class="btn bp" onclick="go('track')">▶ התחל מדידת ריצה (GPS)</button>
   </section>
   <section class="card">
     <div class="src" style="margin-bottom:12px">
-      <div class="src-ic" style="background:var(--coral-s)">${svg('<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',20,'#c4421f')}</div>
+      <div class="src-ic" style="background:var(--coral-s)">${svg('<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',20,'#df3a0e')}</div>
       <div style="flex:1;min-width:0"><h2 class="ct">Strava</h2><p class="cs">OAuth 2.0 + סנכרון ריצות (כולל משעון Garmin)</p></div>
       <span class="badge amb">דורש שרת</span>
     </div>
@@ -527,7 +776,7 @@ function sources(){
   </section>
   <section class="card">
     <div class="src" style="margin-bottom:12px">
-      <div class="src-ic">${svg('<circle cx="12" cy="12" r="7"/><path d="M12 9v3l2 1"/><path d="M9 2h6M9 22h6"/>',22,'#1d5c63')}</div>
+      <div class="src-ic">${svg('<circle cx="12" cy="12" r="7"/><path d="M12 9v3l2 1"/><path d="M9 2h6M9 22h6"/>',22,'#0b7a62')}</div>
       <div style="flex:1;min-width:0"><h2 class="ct">Garmin Connect</h2><p class="cs">OAuth 2.0 PKCE + Push Webhook ישיר</p></div>
       <span class="badge amb">לא מחובר</span>
     </div>
@@ -545,15 +794,27 @@ function resources(){
 }
 
 function render(){
-  const V={home,track,leaderboard,friends,groups,me,sources,resources};
-  document.getElementById('main').innerHTML=V[S.route]();
-  document.getElementById('back-btn').classList.toggle('hidden',!S.prev);
-  const active=TABS.some(t=>t[0]===S.route)?S.route:(S.route==='track'?'home':(S.prev||'me'));
-  document.getElementById('bottom-nav').innerHTML=TABS.map(([k,l])=>`<button class="nb ${k===active?'on':''}" data-tab="${k}" onclick="go('${k}')">${svg(I[k],21)}<span>${l}</span></button>`).join('');
+  if(!S.user)S.route='auth';
+  const V={auth,home,track,calc,leaderboard,friends,groups,me,sources,resources};
+  document.getElementById('main').innerHTML=(V[S.route]||auth)();
+  const loggedIn=Boolean(S.user);
+  document.getElementById('back-btn').classList.toggle('hidden',!loggedIn||!S.prev);
+  document.getElementById('hdr-run-btn')?.classList.toggle('hidden',!loggedIn||S.route==='track'||Boolean(S.prev));
+  const hu=document.getElementById('hdr-user');
+  if(hu){
+    hu.classList.toggle('hidden',!loggedIn);
+    if(loggedIn)hu.innerHTML=`<i></i><span>${esc(S.user.name)}</span>`;
+  }
+  const bn=document.getElementById('bottom-nav');
+  bn.classList.toggle('hidden',!loggedIn);
+  if(loggedIn){
+    const active=TABS.some(t=>t[0]===S.route)?S.route:(S.route==='track'||S.route==='calc'?'home':(S.prev||'me'));
+    bn.innerHTML=TABS.map(([k,l])=>`<button class="nb ${k===active?'on':''}" data-tab="${k}" onclick="go('${k}')">${svg(I[k],21)}<span>${l}</span></button>`).join('');
+  }
 }
 function setGoal(){const v=prompt('יעד שבועי בק"מ (ריק = בלי יעד)',S.goal||'');if(v===null)return;const n=parseFloat(v);S.goal=n>0?Math.round(n*10)/10:null;render();toast(S.goal?'היעד נשמר':'היעד הוסר')}
 document.getElementById('back-btn').onclick=()=>go(S.prev||'home');
-document.getElementById('brand-btn').onclick=()=>go('home');
+document.getElementById('brand-btn').onclick=()=>go(S.user?'home':'auth');
 render();
 </script>
 </body>
