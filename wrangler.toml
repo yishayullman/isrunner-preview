@@ -1,0 +1,11 @@
+# Cloudflare Workers configuration for SEPARATE test environment ONLY (isrunner-test).
+# DO NOT change name/database_name to live "isrunner" without explicit owner approval and D1 backup!
+name = "isrunner-test"
+main = "cloudflare/worker.js"
+compatibility_date = "2026-01-01"
+
+# Bind the separate test D1 database in Cloudflare Dashboard (or fill database_id for wrangler CLI):
+[[d1_databases]]
+binding = "DB"
+database_name = "isrunner-test"
+database_id = "REPLACE_WITH_ISRUNNER_TEST_D1_DATABASE_ID"
